@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado Ejercicio 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado de Compra</h1>
+        <div class="result-container">
+            <p><strong>Nombre del cliente:</strong> {{ nombre }}</p>
+            <p><strong>Total sin descuento:</strong> ${{ "{:,.0f}".format(total_sin) }}</p>
+            {% if descuento > 0 %}
+                <p><strong>Descuento aplicado:</strong> {{ descuento }}%</p>
+            {% endif %}
+            <p class="total-pagar"><strong>Total a pagar:</strong> ${{ "{:,.0f}".format(total_con) }}</p>
+        </div>
+        <div class="action-buttons">
+            <a href="/ejercicio1" class="btn">Nuevo cálculo</a>
+            <a href="/" class="btn back-btn">Volver al menú</a>
+        </div>
+    </div>
+</body>
+</html>

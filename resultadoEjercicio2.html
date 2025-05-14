@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado</h1>
+        <div class="result-container {% if success %}success{% else %}error{% endif %}">
+            <p>{{ mensaje }}</p>
+        </div>
+        <div class="action-buttons">
+            <a href="/ejercicio2" class="btn">Intentar nuevamente</a>
+            <a href="/" class="btn back-btn">Volver al menú</a>
+        </div>
+    </div>
+</body>
+</html>
